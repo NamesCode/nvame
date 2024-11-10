@@ -14,9 +14,11 @@
 
     # Defines the plugins
     plugins = with pkgs.vimPlugins; [
-      # Setup telescope
+      # Telescope
       plenary-nvim
       telescope-nvim
+      telescope-file-browser-nvim
+      telescope-ui-select-nvim
 
       # Helpers
       which-key-nvim
@@ -37,16 +39,31 @@
 
       # LSP
       nvim-lspconfig
+      cmp-nvim-lsp
+
+      # Snippets
+      luasnip
+      friendly-snippets
+
+      # Completions
+      nvim-cmp
+      cmp-buffer
+      cmp-git
+      cmp_luasnip
+      SchemaStore-nvim
     ];
 
     # Defines the external packages required
     packages = with pkgs; [
       # Better grep
       ripgrep
+      
+      # Better file finding
+      fd
 
       # LSP servers
-      nil
-      sumneko-lua-language-server
+      nil # Nix
+      sumneko-lua-language-server # Lua
     ];
   in {
     # Joins the plugin derivations and the Neovim derivation into one

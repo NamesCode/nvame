@@ -27,6 +27,8 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 -- Enables smartcase for searching
 vim.opt.smartcase = true;
 
+-- Enable nerdfont
+vim.g.have_nerd_font = true;
 
 --- Tab options
 -- Sets tabs to be 2 spaces wide
