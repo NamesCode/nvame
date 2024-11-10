@@ -45,7 +45,7 @@ vim.cmd.colorscheme('catppuccin-mocha');
 
 --- Keybinds: vim.keymap.set({mode}, {lhs}, {rhs}, {opts})
 -- Launch terminal on <leader>t at the bottom
-vim.keymap.set('n', '<leader>t', '<cmd>bo term<cr>', nil)
+vim.keymap.set('n', '<leader>t', '<cmd>bo term<cr>', { desc='Launch terminal' })
 
 vim.api.nvim_create_autocmd("TermOpen", {
   pattern = "*",

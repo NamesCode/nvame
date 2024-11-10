@@ -55,17 +55,10 @@
       paths = [pkgs.neovim-unwrapped plugins packages ];
       nativeBuildInputs = [pkgs.makeWrapper];
       postBuild = ''
-        # Creates the config directory and copies the contents of ./config into it
-        mkdir -p $out/config
-        ln -s ${./config}/* $out/config
-
-        # Moves the installed treesitter queries to the Nvim runtime
-        mv -f $out/queries $out/share/nvim/runtime/queries
-
         # Wraps Neovim and makes it use the packages in the Nix store
         wrapProgram $out/bin/nvim \
           --add-flags '-u' \
-          --add-flags 'config/init.lua' \
+          --add-flags '${./config}/init.lua'\
           --add-flags '--cmd' \
           --add-flags "'set packpath^=$out/ | set runtimepath^=$out/'"
       '';
