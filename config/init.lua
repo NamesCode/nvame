@@ -68,7 +68,9 @@ require('config.treesitter');
 require('config.telescope');
 require('config.lsp');
 require('config.comp');
+require('config.git');
 ]] --
 
 --- Plugins
 require('which-key');
+require('gitsigns').setup()

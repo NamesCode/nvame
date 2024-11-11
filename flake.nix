@@ -37,6 +37,11 @@
       nvim-treesitter-parsers.toml
       nvim-treesitter-parsers.markdown
 
+      # Git
+      vim-fugitive
+      gitsigns-nvim
+      cmp-git
+
       # LSP
       nvim-lspconfig
       cmp-nvim-lsp
@@ -48,7 +53,6 @@
       # Completions
       nvim-cmp
       cmp-buffer
-      cmp-git
       cmp_luasnip
       SchemaStore-nvim
     ];
