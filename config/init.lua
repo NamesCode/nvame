@@ -13,14 +13,14 @@ vim.opt.relativenumber = true;
 vim.api.nvim_create_autocmd("InsertEnter", {
   pattern = "*",
   callback = function()
-    vim.opt.relativenumber = false  -- Set to absolute line numbers in Insert mode
+    vim.opt.relativenumber = false -- Set to absolute line numbers in Insert mode
   end,
 })
 
 vim.api.nvim_create_autocmd("InsertLeave", {
   pattern = "*",
   callback = function()
-    vim.opt.relativenumber = true   -- Set to relative line numbers in Normal mode
+    vim.opt.relativenumber = true -- Set to relative line numbers in Normal mode
   end,
 })
 
@@ -45,9 +45,10 @@ vim.cmd.colorscheme('catppuccin-mocha');
 
 
 
+
 --- Keybinds: vim.keymap.set({mode}, {lhs}, {rhs}, {opts})
 -- Launch terminal on <leader>t at the bottom
-vim.keymap.set('n', '<leader>t', '<cmd>bo term<cr>', { desc='Launch terminal' })
+vim.keymap.set('n', '<leader>t', '<cmd>bo term<cr>', { desc = 'Launch terminal' })
 
 vim.api.nvim_create_autocmd("TermOpen", {
   pattern = "*",
@@ -60,10 +61,14 @@ vim.api.nvim_create_autocmd("TermOpen", {
 
 ---- Importing modules
 --- Config
+-- NOTE: Normally you would need to import these modules BUT because we're doing a hacky fix
+-- by adding all these files as plugins in our flake, we no longer need too.
+--[[
 require('config.treesitter');
 require('config.telescope');
 require('config.lsp');
 require('config.comp');
+]] --
 
 --- Plugins
 require('which-key');

@@ -1,9 +1,11 @@
-# Todo
+# To-do
 
 - [ ] Neogit on space-g
-- [ ] Filebrowser on space-fb
-- [ ] grepper on space-fg
-- [ ] fzf on space-ff
-- [ ] Rainbow delimeters
-- [ ] LSP and treesitter
-- [ ] Code completions
+- [ ] Git changes on the left
+- [X] Filebrowser on space-fb
+- [X] grepper on space-fg
+- [X] fzf on space-ff
+- [x] Rainbow delimeters
+- [X] LSP and treesitter
+- [X] Code completions
+- [X] Terminal on space-t

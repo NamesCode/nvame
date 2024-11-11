@@ -64,6 +64,7 @@
       # LSP servers
       nil # Nix
       sumneko-lua-language-server # Lua
+      ltex-ls # LaTeX
     ];
   in {
     # Joins the plugin derivations and the Neovim derivation into one
@@ -72,12 +73,18 @@
       paths = [pkgs.neovim-unwrapped plugins packages ];
       nativeBuildInputs = [pkgs.makeWrapper];
       postBuild = ''
+        # HACK: Since we cannot just import our config files normally, we must add them to the plugins location and have them loaded as plugins.
+        # This will work as normal however :3
+        mkdir -p $out/plugin/config/
+        ln -s ${./config}/* $out/plugin/config/
+
         # Wraps Neovim and makes it use the packages in the Nix store
         wrapProgram $out/bin/nvim \
           --add-flags '-u' \
-          --add-flags '${./config}/init.lua'\
+          --add-flags 'NORC' \
           --add-flags '--cmd' \
-          --add-flags "'set packpath^=$out/ | set runtimepath^=$out/'"
+          --add-flags "'set packpath^=$out/ | set runtimepath^=$out/,$out/after/'" \
+          --set-default NVIM_APPNAME nvame
       '';
     };
   };

@@ -82,7 +82,6 @@ local handlers = {
 }
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities();
-print(capabilities);
 
 local common = {
   capabilities = capabilities,
