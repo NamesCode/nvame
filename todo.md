@@ -1,7 +1,7 @@
 # To-do
 
-- [ ] Neogit on space-g
-- [ ] Git changes on the left
+- [X] Neogit on space-g
+- [X] Git changes on the left
 - [X] Filebrowser on space-fb
 - [X] grepper on space-fg
 - [X] fzf on space-ff
@@ -9,3 +9,4 @@
 - [X] LSP and treesitter
 - [X] Code completions
 - [X] Terminal on space-t
+- [ ] README
