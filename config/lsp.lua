@@ -63,7 +63,15 @@ local servers = {
       },
     },
   },
-  nil_ls = {},
+  nil_ls = {
+    settings = {
+      ['nil'] = {
+        formatting = {
+          command = { "nixfmt" },
+        },
+      },
+    },
+  },
   rust_analyzer = {
     settings = {
       ['rust-analyzer'] = {

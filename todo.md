@@ -10,3 +10,4 @@
 - [X] Code completions
 - [X] Terminal on space-t
 - [ ] README
+- [ ] Blogpost on Neovim flakes
