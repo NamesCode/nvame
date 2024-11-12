@@ -33,6 +33,7 @@
         nvim-treesitter.withAllGrammars
 
         nvim-treesitter-parsers.nix
+        nvim-treesitter-parsers.lua
         nvim-treesitter-parsers.rust
         nvim-treesitter-parsers.html
         nvim-treesitter-parsers.json
