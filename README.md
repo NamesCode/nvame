@@ -27,7 +27,7 @@ If you don't have Nix installed, you shouldn't be looking at this anyway.
 
 ### Adding LSPs
 
-The actual language servers themselves are uninstalled.
+The actual language servers themselves aren't installed (Besides the Nix, Latex and Lua LSP's).
 This is intentional as ideally you should be installing the language servers within your projects devshell.
 
 ### Temporary usage
