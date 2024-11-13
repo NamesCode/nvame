@@ -117,13 +117,13 @@
             }
           );
 
-      # Create a NixOS module so that you can install Nvame configs with config.nvame
+      # Creates a NixOS module so that you can install Nvame configs with config.nvame
       nixosModules.nvame =
         { system, lib, ... }:
         {
           options.nvameConfigs = lib.mkOption {
             type = lib.types.attrs;
-            default = self.packages.${system}; # Default to the fixed set
+            default = self.packages.${system}; # Default to the fixed set of packages
             description = "The set of Nvame configs";
           };
 
@@ -131,11 +131,11 @@
         };
       nixosModules.default = self.nixosModules.nvame;
 
-      # Create a home-manager module so that you can install Nvame configs with config.nvame
+      # Creates a home-manager module so that you can install Nvame configs with config.nvame
       hmModules.nvame = self.nixosModules.nvame;
       hmModules.default = self.hmModules.nvame;
 
-      # Create a darwin module so that you can install Nvame configs with config.nvame
+      # Creates a darwin module so that you can install Nvame configs with config.nvame
       darwinModules.nvame = self.nixosModules.nvame;
       darwinModules.default = self.darwinModules.nvame;
     };
