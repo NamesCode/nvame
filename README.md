@@ -4,7 +4,7 @@ My personal Neovim flake!
 
 ## Includes
 
-### Main config
+### Main config (`mainConfig`)
 
 Neovim:
 - Catppuccin Mocha + rainbow-delimeters
