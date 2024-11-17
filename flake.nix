@@ -35,6 +35,9 @@
                 # Helpers
                 which-key-nvim
 
+                # Greeter
+                alpha-nvim
+
                 # Themeing
                 catppuccin-nvim
                 rainbow-delimiters-nvim
