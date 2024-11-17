@@ -2,6 +2,8 @@
 
 My personal Neovim flake!
 
+![A preview image of my Neovim config. It displays an ASCII image of Shinji sobbing on a chair along with some hotkeys and a footer saying "Stay wild, star child <3".](./preview.webp)
+
 ## Includes
 
 ### Main config (`mainConfig`)
