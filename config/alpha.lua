@@ -149,7 +149,7 @@ dashboard.section.buttons.val = {
   dashboard.button("SPC ff", "  Find file", ":Telescope find_files<cr>"),
   dashboard.button("SPC fb", "  File browser", ":Telescope file_browser<cr>"),
   dashboard.button("SPC fg", "  Live grep", ":Telescope live_grep<cr>"),
-  dashboard.button("SPC nv", "  Git view", ":Git<cr>"),
+  dashboard.button("SPC gv", "  Git view", ":Git<cr>"),
   dashboard.button("q", "  Quit", ":qa<CR>"),
 };
 
