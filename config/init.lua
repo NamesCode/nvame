@@ -78,6 +78,7 @@ require('config.git');
 
 --- Plugins
 require('which-key');
+require('todo-comments').setup();
 
 
 ---- TEMP FIX FOR GIT.LUA

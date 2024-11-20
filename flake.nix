@@ -41,6 +41,7 @@
 
                 # Helpers
                 which-key-nvim
+                todo-comments-nvim
 
                 # Greeter
                 alpha-nvim
