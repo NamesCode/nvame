@@ -44,7 +44,7 @@ For use in a shell just do:
 
 #### With NixOS
 
-Firstly add `nvame.url = "path:/home/Name/projects/nvame";` to your inputs; this will pull in the flake for use.
+Firstly add `nvame.url = "github:namescode/nvame";` to your inputs; this will pull in the flake for use.
 
 Then add `inputs.nvame.nixosModules.nvame` to your nixosSystem modules, like this:
 
@@ -71,7 +71,7 @@ environment.systemPackages = with pkgs; [
 
 #### With home-manager
 
-Firstly add `nvame.url = "path:/home/Name/projects/nvame";` to your inputs; this will pull in the flake for use.
+Firstly add `nvame.url = "github:namescode/nvame";` to your inputs; this will pull in the flake for use.
 
 Then add `inputs.nvame.hmModules.nvame` to your nixosSystem modules, like this:
 
@@ -98,7 +98,7 @@ home.packages = with pkgs; [
 
 #### With nix-darwin
 
-Firstly add `nvame.url = "path:/home/Name/projects/nvame";` to your inputs; this will pull in the flake for use.
+Firstly add `nvame.url = "github:namescode/nvame";` to your inputs; this will pull in the flake for use.
 
 Then add `inputs.nvame.darwinModules.nvame` to your darwinSystem modules, like this:
 
@@ -125,7 +125,7 @@ environment.systemPackages = with pkgs; [
 
 #### Without a module
 
-Firstly add `nvame.url = "path:/home/Name/projects/nvame";` to your inputs; this will pull in the flake for use.
+Firstly add `nvame.url = "github:namescode/nvame";` to your inputs; this will pull in the flake for use.
 
 Then, install the packages you need through `inputs.nvame.packages.${system}` (Make sure to pass `inputs` as an attribute)
 For example:
