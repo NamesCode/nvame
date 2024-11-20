@@ -1,3 +1,8 @@
+--[[
+    SPDX-FileCopyrightText: 2024 Name <lasagna@garfunkle.space>
+    SPDX-License-Identifier: MPL-2.0
+  ]]
+
 -- Setup nvim-treesitter
 require('nvim-treesitter.configs').setup {
   -- Enable Treesitter highlighting

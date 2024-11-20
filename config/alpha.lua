@@ -1,3 +1,8 @@
+--[[
+    SPDX-FileCopyrightText: 2024 Name <lasagna@garfunkle.space>
+    SPDX-License-Identifier: MPL-2.0
+  ]]
+
 local dashboard = require("alpha.themes.dashboard");
 
 -- WARN: MUST BE AT MOST 24 LINES

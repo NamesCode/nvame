@@ -1,3 +1,8 @@
+--[[
+    SPDX-FileCopyrightText: 2024 Name <lasagna@garfunkle.space>
+    SPDX-License-Identifier: MPL-2.0
+  ]]
+
 -- Set up nvim-cmp
 local cmp = require('cmp');
 local snip = require('luasnip');

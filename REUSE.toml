@@ -1,0 +1,20 @@
+## This file is for REUSE compliance. Refer to https://reuse.software/tutorial/ for more information.
+version = 1
+
+# Applies CC-BY-SA-4.0 to all textual files
+[[annotations]]
+path = [
+    "*.md",
+    "*.webp",
+    "REUSE.toml",
+    ".git*",
+    ".envrc"
+]
+SPDX-FileCopyrightText = "2024 Name <lasagna@garfunkles.space>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+# Applies MPL-2.0 to flake.nix
+[[annotations]]
+path = "flake.lock"
+SPDX-FileCopyrightText = "2024 Name <lasagna@garfunkles.space>"
+SPDX-License-Identifier = "MPL-2.0"

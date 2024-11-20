@@ -1,3 +1,8 @@
+--[[
+    SPDX-FileCopyrightText: 2024 Name <lasagna@garfunkle.space>
+    SPDX-License-Identifier: MPL-2.0
+  ]]
+
 ---- Fugitive
 --- Maps for fugitive
 function set_git_keymaps()

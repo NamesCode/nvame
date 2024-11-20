@@ -9,5 +9,5 @@
 - [X] LSP and treesitter
 - [X] Code completions
 - [X] Terminal on space-t
-- [ ] README
+- [X] README
 - [ ] Blogpost on Neovim flakes

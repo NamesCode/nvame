@@ -1,3 +1,9 @@
+/*
+  * SPDX-FileCopyrightText: 2024 Name <lasagna@garfunkle.space>
+  *
+  * SPDX-License-Identifier: MPL-2.0
+*/
+
 {
   description = "Nvame: My personal Neovim flake";
 
@@ -22,6 +28,7 @@
           (
             system:
             let
+              lib = nixpkgs.lib;
               pkgs = nixpkgs.legacyPackages.${system};
 
               # Defines the plugins
@@ -116,6 +123,15 @@
                     --add-flags "'set packpath^=$out/ | set runtimepath^=$out/,$out/after/'" \
                     --set-default NVIM_APPNAME nvame
                 '';
+
+                # This ensures our package is licensed properly within Nix
+                meta = {
+                  description = "My main Neovim configuration";
+                  homepage = "https://git.garfunkles.space/nvame";
+                  license = lib.licenses.mpl20;
+                  maintainers = with lib.maintainers; [ "Name" ];
+                  platforms = lib.platforms.all;
+                };
               };
             }
           );
@@ -141,5 +157,31 @@
       # Creates a darwin module so that you can install Nvame configs with config.nvame
       darwinModules.nvame = self.nixosModules.nvame;
       darwinModules.default = self.darwinModules.nvame;
+
+      # Creates a devShell for use in Nix Direnv
+      devShells =
+        nixpkgs.lib.genAttrs
+          [
+            "x86_64-linux"
+            "aarch64-linux"
+            "x86_64-darwin"
+            "aarch64-darwin"
+          ]
+          (
+            system:
+            let
+              pkgs = nixpkgs.legacyPackages.${system};
+            in
+            {
+              default = pkgs.mkShell {
+                nativeBuildInputs = with pkgs; [
+                  reuse
+                ];
+
+                shellHook = ''echo "You have now entered the dev-shell for Nvame. Please be sure to check for REUSE compliance."'';
+              };
+
+            }
+          );
     };
 }
