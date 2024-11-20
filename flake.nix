@@ -176,6 +176,7 @@
               default = pkgs.mkShell {
                 nativeBuildInputs = with pkgs; [
                   reuse
+                  (self.packages.${system}.default)
                 ];
 
                 shellHook = ''echo "You have now entered the dev-shell for Nvame. Please be sure to check for REUSE compliance."'';
