@@ -46,6 +46,9 @@ vim.opt.expandtab = true;
 
 --- Themeing
 vim.opt.termguicolors = true;
+
+-- Catppuccin themeing
+require('catppuccin').setup({ transparent_background = true });
 vim.cmd.colorscheme('catppuccin-mocha');
 
 
