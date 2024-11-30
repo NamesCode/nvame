@@ -51,6 +51,7 @@ local servers = {
   },
   lua_ls = {},
   html = {},
+  ts_ls = {},
   ltex = {
     on_attach = function()
       require("ltex_extra").setup({
