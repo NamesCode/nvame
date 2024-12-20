@@ -50,7 +50,14 @@ local servers = {
     },
   },
   lua_ls = {},
-  html = {},
+  html = {
+    filetypes = {
+      "html",
+      "vtml",
+      "htmltera",
+      "svelte",
+    },
+  },
   ts_ls = {},
   ltex = {
     on_attach = function()

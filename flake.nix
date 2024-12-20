@@ -57,6 +57,7 @@
                 nvim-treesitter-parsers.lua
                 nvim-treesitter-parsers.rust
                 nvim-treesitter-parsers.html
+                nvim-treesitter-parsers.css
                 nvim-treesitter-parsers.javascript
                 nvim-treesitter-parsers.typescript
                 nvim-treesitter-parsers.json
