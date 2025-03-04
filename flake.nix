@@ -43,6 +43,9 @@
                 which-key-nvim
                 todo-comments-nvim
 
+                # Discord RPC
+                neocord
+
                 # Greeter
                 alpha-nvim
 
@@ -163,7 +166,6 @@
 
                 shellHook = ''echo "You have now entered the dev-shell for Nvame. Please be sure to check for REUSE compliance."'';
               };
-
             }
           );
     };
