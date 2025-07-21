@@ -1,0 +1,33 @@
+// SPDX-FileCopyrightText: 2025 Name <lasagna@garfunkle.space>
+//
+// SPDX-License-Identifier: CC-BY-SA-4.0
+
+= nvame-lsp(5)
+Name <lasagna@garfunkles.space>
+v1.0
+:doctype: manpage
+:docdate: 2025-05-01
+:manmanual: NVaMe Manual
+:mansource: NVaMe 1.0
+
+== Name
+nvame-lsp - LSP setup information for NVaMe.
+
+== Synopsis
+Just install one of the LSPs listed in <<Options>> and you should be all setup.
+
+== Description
+This manpage serves as a reference for the LSP specific configurations declared in NVaMe along with a list of compatible LSPs to use.
+
+== Options
+
+=== examp_ls
+*Language:* Example lang. +
+*Purpose:* Provides code completion, diagnostics, and search for Example. +
+*Bundled:* Yes | No, you must install it. +
+*Default setup:*
+
+[source, lua]
+----
+--[ Put LSP specific config here ]--
+----

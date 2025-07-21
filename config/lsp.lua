@@ -1,6 +1,6 @@
 --[[
     SPDX-FileCopyrightText: 2024 Name <lasagna@garfunkle.space>
-    SPDX-License-Identifier: MPL-2.0
+    SPDX-License-Identifier: EUPL-1.2
   ]]
 
 ---- Setup LSP's
@@ -69,6 +69,27 @@ local servers = {
     settings = {
       ltex = {
         language = "en-GB",
+        filetypes = {
+          "bib",
+          "gitcommit",
+          "markdown",
+          "md",
+          "adoc",
+          "asciidoc",
+          "org",
+          "plaintex",
+          "rst",
+          "rnoweb",
+          "tex",
+          "pandoc",
+          "quarto",
+          "rmd",
+          "context",
+          "html",
+          "xhtml",
+          "mail",
+          "text",
+        },
         additionalRules = {
           enablePickyRules = true,
           motherTongue = "en-GB",
@@ -85,6 +106,9 @@ local servers = {
       },
     },
   },
+  nextls = {
+    cmd = { "nextls", "--stdio" },
+  },
   rust_analyzer = {
     settings = {
       ['rust-analyzer'] = {
@@ -98,7 +122,8 @@ local servers = {
         },
       }
     }
-  }
+  },
+  zls = {}
 }
 
 --- Apply common capabilities

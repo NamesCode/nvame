@@ -1,6 +1,6 @@
 --[[
     SPDX-FileCopyrightText: 2024 Name <lasagna@garfunkle.space>
-    SPDX-License-Identifier: MPL-2.0
+    SPDX-License-Identifier: EUPL-1.2
   ]]
 
 local dashboard = require("alpha.themes.dashboard");

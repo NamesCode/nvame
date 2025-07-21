@@ -1,7 +1,7 @@
 /*
   * SPDX-FileCopyrightText: 2024 Name <lasagna@garfunkle.space>
   *
-  * SPDX-License-Identifier: MPL-2.0
+  * SPDX-License-Identifier: EUPL-1.2
 */
 
 {
@@ -58,7 +58,10 @@
 
                 nvim-treesitter-parsers.nix
                 nvim-treesitter-parsers.lua
+                nvim-treesitter-parsers.fennel
                 nvim-treesitter-parsers.rust
+                nvim-treesitter-parsers.zig
+                nvim-treesitter-parsers.elixir
                 nvim-treesitter-parsers.html
                 nvim-treesitter-parsers.css
                 nvim-treesitter-parsers.javascript
@@ -98,6 +101,8 @@
                 # LSP servers
                 nil # Nix
                 sumneko-lua-language-server # Lua
+                # TODO: Make package for Fennel language server in Nurrrr
+                # nurrrr.fennel-language-server # Fennel
                 ltex-ls # LaTeX
 
                 # Formatting
@@ -115,7 +120,10 @@
                   plugins
                   packages
                 ];
-                nativeBuildInputs = [ pkgs.makeWrapper ];
+                nativeBuildInputs = [
+                  pkgs.makeWrapper
+                  pkgs.asciidoctor
+                ];
                 postBuild = ''
                   # HACK: Since we cannot just import our config files normally, we must add them to the plugins location and have them loaded as plugins.
                   # This will work as normal however :3
@@ -134,10 +142,10 @@
                 # This ensures our package is licensed properly within Nix
                 meta = {
                   description = "My main Neovim configuration";
-                  homepage = "https://git.garfunkles.space/nvame";
-                  license = lib.licenses.mpl20;
+                  homepage = "https://git.garfunkles.space/Name/nvame";
+                  license = lib.licenses.eupl12;
                   maintainers = with lib.maintainers; [ "Name" ];
-                  platforms = lib.platforms.all;
+                  platforms = lib.platforms.unix;
                 };
               };
             }
