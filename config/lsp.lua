@@ -4,7 +4,7 @@
   ]]
 
 ---- Setup LSP's
-local lsp = require('lspconfig');
+local lsp = vim.lsp.config;
 local schemastore = require('schemastore');
 
 local servers = {
@@ -126,17 +126,12 @@ local servers = {
   zls = {}
 }
 
---- Apply common capabilities
-local handlers = {
-  ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover),
-  ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help),
-}
-
-local capabilities = require('cmp_nvim_lsp').default_capabilities();
-
 local common = {
-  capabilities = capabilities,
-  handlers = handlers,
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+  handlers = {
+    ["textDocument/hover"] = vim.lsp.buf.hover(),
+    ["textDocument/signatureHelp"] = vim.lsp.buf.signature_help(),
+  },
 }
 
 for server, config in pairs(servers) do

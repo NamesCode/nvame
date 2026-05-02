@@ -4,7 +4,7 @@
   ]]
 
 -- Setup nvim-treesitter
-require('nvim-treesitter.configs').setup {
+require("treesitter").setup {
   -- Enable Treesitter highlighting
   highlight = {
     enable = true,

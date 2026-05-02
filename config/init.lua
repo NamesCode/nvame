@@ -51,12 +51,15 @@ vim.opt.termguicolors = true;
 require('catppuccin').setup({ transparent_background = true });
 vim.cmd.colorscheme('catppuccin-mocha');
 
-
-
-
 --- Keybinds: vim.keymap.set({mode}, {lhs}, {rhs}, {opts})
 -- Launch terminal on <leader>t at the bottom
 vim.keymap.set('n', '<leader>t', '<cmd>bo term<cr>', { desc = 'Launch terminal' })
+
+-- Better `wq`
+vim.api.nvim_create_user_command("wb", function() vim.cmd("w!") vim.cmd("bdelete!") end, {nargs = 0})
+
+-- Prompt Ollama from within editor
+-- vim.api.nvim_create_user_command("prompt", function() vim.cmd("w!") vim.cmd("bdelete!") end, {nargs = 1})
 
 vim.api.nvim_create_autocmd("TermOpen", {
   pattern = "*",
@@ -64,8 +67,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.cmd("resize 10")
   end,
 })
-
-
 
 ---- Importing modules
 --- Config
@@ -82,30 +83,3 @@ require('config.git');
 --- Plugins
 require('which-key');
 require('todo-comments').setup();
-
-
----- TEMP FIX FOR GIT.LUA
---[[
----- Fugitive
---- Maps for fugitive
--- General
-vim.keymap.set('n', '<leader>gv', '<Cmd>Git<Cr>', { desc = 'Open Git view' });
-vim.keymap.set('n', '<leader>gd', '<Cmd>lua vim.cmd("Git diff " .. vim.fn.input("Branch to diff against: "))<CR>',
-  { desc = 'Open Git diff' });
-vim.keymap.set('n', '<leader>gb', '<Cmd>lua vim.cmd("Git checkout -b " .. vim.fn.input("Branch name: "))<CR>',
-  { desc = 'Open Git branch' });
-
--- Pull / Push
-vim.keymap.set('n', '<leader>gy', '<Cmd>Git pull<Cr>', { desc = 'Git pull' });
-vim.keymap.set('n', '<leader>gp', '<Cmd>Git push<Cr>', { desc = 'Git push' });
-
--- Commiting
-vim.keymap.set('n', '<leader>gcc', '<Cmd>Git commit<Cr>', { desc = 'Git commit' });
-vim.keymap.set('n', '<leader>gca', '<Cmd>Git commit --amend<Cr>', { desc = 'Git commit amend' });
-
-
-
-
----- Git signs
-require('gitsigns').setup()
-]] --

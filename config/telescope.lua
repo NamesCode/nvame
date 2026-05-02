@@ -57,3 +57,6 @@ vim.keymap.set('n', '<leader>fc', builtin.git_commits, { desc = 'Telescope find 
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'Telescope switch branch' })
 vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
+-- Open Ollama chat on the far right in a new window
+vim.keymap.set('n', '<leader>cc', '<cmd>vert rightb term ollama run qa-qwen2.5-coder:14b<cr><cmd>vert res 53<cr>', { desc = 'Open LLM chat' })

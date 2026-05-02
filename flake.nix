@@ -5,7 +5,7 @@
 */
 
 {
-  description = "Nvame: My personal Neovim flake";
+  description = "Nvame: My personal Neovim flake. Use if you dare";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -83,6 +83,9 @@
                 luasnip
                 friendly-snippets
 
+                # Experimental AI stuff
+                minuet-ai-nvim
+
                 # Completions
                 nvim-cmp
                 cmp-buffer
@@ -100,13 +103,16 @@
 
                 # LSP servers
                 nil # Nix
-                sumneko-lua-language-server # Lua
+                lua-language-server # Lua
                 # TODO: Make package for Fennel language server in Nurrrr
                 # nurrrr.fennel-language-server # Fennel
                 ltex-ls # LaTeX
 
+                # AI stuff
+                ollama
+
                 # Formatting
-                nixfmt-rfc-style
+                nixfmt
               ];
             in
             {

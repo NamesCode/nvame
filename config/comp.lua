@@ -23,10 +23,10 @@ cmp.setup({
     documentation = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
+    ['<C-k>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-j>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Tab>'] = cmp.mapping.complete(),
+    ['<C-c>'] = cmp.mapping.abort(),
     ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   }),
   completion = {
@@ -34,8 +34,13 @@ cmp.setup({
     keyword_length = 1,
     autocomplete = { cmp.TriggerEvent.TextChanged }
   },
+  -- make it so LLM doesnt time out
+  performance = {
+    fetching_timeout = 15000,
+  },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
+    { name = 'minuet' },
     { name = 'luasnip' },
   }, {
     { name = 'buffer' },
