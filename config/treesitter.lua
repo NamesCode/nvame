@@ -3,25 +3,8 @@
     SPDX-License-Identifier: EUPL-1.2
   ]]
 
--- Setup nvim-treesitter
-require("treesitter").setup {
-  -- Enable Treesitter highlighting
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
-
-  -- Something
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "gnn", -- set to `false` to disable one of the mappings
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
-    },
-  },
-}
+-- Launch treesitter instead of regex
+vim.treesitter.start();
 
 -- Fold with Treesitter
 vim.opt.foldenable = false;

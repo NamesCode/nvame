@@ -31,6 +31,9 @@
               lib = nixpkgs.lib;
               pkgs = nixpkgs.legacyPackages.${system};
 
+              # Highlighting grammars
+              hl-grammars = "${pkgs.vimPlugins.nvim-treesitter.withAllGrammars}/runtime/queries";
+
               # Defines the plugins
               plugins = with pkgs.vimPlugins; [
                 # Telescope
@@ -54,8 +57,6 @@
                 rainbow-delimiters-nvim
 
                 # Treesitter
-                nvim-treesitter.withAllGrammars
-
                 nvim-treesitter-parsers.nix
                 nvim-treesitter-parsers.lua
                 nvim-treesitter-parsers.fennel
@@ -135,6 +136,9 @@
                   # This will work as normal however :3
                   mkdir -p $out/plugin/config/
                   ln -s ${./config}/* $out/plugin/config/
+
+                  # We now have to manually install scm files ourselves now that `nvim-treesitter` is archived.
+                  cp -r ${hl-grammars}/. $out/queries/
 
                   # Wraps Neovim and makes it use the packages in the Nix store
                   wrapProgram $out/bin/nvim \

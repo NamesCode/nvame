@@ -56,7 +56,7 @@ vim.cmd.colorscheme('catppuccin-mocha');
 vim.keymap.set('n', '<leader>t', '<cmd>bo term<cr>', { desc = 'Launch terminal' })
 
 -- Better `wq`
-vim.api.nvim_create_user_command("wb", function() vim.cmd("w!") vim.cmd("bdelete!") end, {nargs = 0})
+vim.api.nvim_create_user_command("WB", function() vim.cmd("w!") vim.cmd("bdelete!") end, {nargs = 0})
 
 -- Prompt Ollama from within editor
 -- vim.api.nvim_create_user_command("prompt", function() vim.cmd("w!") vim.cmd("bdelete!") end, {nargs = 1})

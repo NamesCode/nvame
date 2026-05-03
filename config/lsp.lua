@@ -4,14 +4,14 @@
   ]]
 
 ---- Setup LSP's
-local lsp = vim.lsp.config;
+local lsp = vim.lsp;
 local schemastore = require('schemastore');
 
 local servers = {
   bashls = {},
   cssls = {},
   denols = {
-    root_dir = lsp.util.root_pattern("deno.json", "deno.jsonc"),
+    root_markers = { "deno.json", "deno.jsonc" },
     single_file_support = false,
   },
   emmet_language_server = {
@@ -136,10 +136,12 @@ local common = {
 
 for server, config in pairs(servers) do
   if config == {} then
-    lsp[server].setup(common)
+    lsp.config(server, common)
   else
-    lsp[server].setup(vim.tbl_extend("force", common, config))
+    lsp.config(server, vim.tbl_extend("force", common, config))
   end
+
+  lsp.enable(server, true)
 end
 
 --- Autocommand hooks
